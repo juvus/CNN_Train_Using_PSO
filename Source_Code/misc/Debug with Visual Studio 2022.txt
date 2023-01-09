@@ -1,0 +1,5 @@
+Debug with Visual Studio 2022:
+
+1) Run shell.bat
+2) cd ../build/debug
+3) devenv Program.exe

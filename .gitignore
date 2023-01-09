@@ -1,0 +1,15 @@
+# Ignored folders and files
+Documents/
+Reports/
+MNIST/
+Source_Code/.qtc_clangd/
+Source_Code/.qmake.stash
+Source_Code/CNN_Train_Using_PSO.pro.user
+Source_Code/build/
+Source_Code/Makefile
+Source_Code/Makefile.Debug
+Source_Code/Makefile.Release
+
+
+
+
