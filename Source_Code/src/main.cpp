@@ -7,27 +7,16 @@ Description: Main program file with entrance point. DrawingWindow class doesn't
 ================================================================================
 */
 
-// Standard includes:
 #include <QApplication>
 #include <QWidget>
-
-// Program includes:
+#include <main_window.h>
 
 int main(int argc, char **argv)
 {
-    // Create the application
     QApplication app(argc, argv);
 
-    // Creating the main widget
-    QWidget window;
-
-    // Main widget settings
-    window.resize(250, 150);
-    window.setWindowTitle("Simple example");
-    window.setToolTip("This is QWidget!");
-    
-	// Show the created window
-	window.show();
+    MainWindow main_window;
+    main_window.show();
 
     return (app.exec());
 }

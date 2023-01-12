@@ -16,8 +16,13 @@ TEMPLATE = app
 
 SOURCES += \
     ./src/main.cpp \
+	./src/main_window.cpp
 
 HEADERS += \
+	./include/main_window.h
+
+FORMS = \
+	./ui/MainWindow.ui
 
 INCLUDEPATH += $$PWD/include
 

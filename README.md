@@ -11,4 +11,4 @@ Learning algorithm: Particle Swarm Optimization (PSO)
 Technologies: C++, Qt (for GUI)
 
 ## Licence
-Engine code in this project is available under the `GPLv3` license. You can find the license file here: [LICENSE](/LICENSE)
+Code in this project is available under the `GPLv3` license. You can find the license file here: [LICENSE](/LICENSE)

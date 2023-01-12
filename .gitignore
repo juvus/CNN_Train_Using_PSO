@@ -4,6 +4,7 @@ Reports/
 MNIST/
 Source_Code/.qtc_clangd/
 Source_Code/.qmake.stash
+Source_Code/.vscode/
 Source_Code/CNN_Train_Using_PSO.pro.user
 Source_Code/build/
 Source_Code/Makefile
