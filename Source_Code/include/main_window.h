@@ -1,18 +1,18 @@
 /**
  * ================================================================================
- * @file main_window.h
+ * @file include/main_window.h
  * @author Dmitry Safonov (juvusoft@gmail.com)
- * @brief Declaration of the MainWindow class methods. This is the main window of
- * the application.
+ * @brief Declaration of the MainWindow class. This class describes the behavior
+ * of the main window of the application.
  * @version 0.1
  * @date 2023-01-11
  * ================================================================================
  */
 
-#ifndef MAIN_WINDOW_H_
-#define MAIN_WINDOW_H_
+#ifndef CNN_PSO_PROJECT_MAIN_WINDOW_H_
+#define CNN_PSO_PROJECT_MAIN_WINDOW_H_
 
-#include <QtWidgets/QMainWindow>
+#include <QMainWindow>
 
 #ifdef _DEBUG
     #include "../build/debug/ui/ui_MainWindow.h"
@@ -46,7 +46,7 @@ private:
     /**
      * @brief Initialization of the main window graphical user interface.
      */
-    void initUI();
+    void initializeUI();
 };
 
-#endif  // MAIN_WINDOW_H_
+#endif  // CNN_PSO_PROJECT_MAIN_WINDOW_H_

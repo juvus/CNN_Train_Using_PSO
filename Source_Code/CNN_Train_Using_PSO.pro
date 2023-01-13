@@ -16,28 +16,29 @@ TEMPLATE = app
 
 SOURCES += \
     ./src/main.cpp \
-	./src/main_window.cpp
+    ./src/main_window.cpp
 
 HEADERS += \
-	./include/main_window.h
+    ./include/utils.h \
+    ./include/main_window.h
 
 FORMS = \
-	./ui/MainWindow.ui
+    ./ui/MainWindow.ui
 
 INCLUDEPATH += $$PWD/include
 
 CONFIG(release, debug|release) {
-	DESTDIR = ./build/release
-	OBJECTS_DIR = ./build/release/obj
-	MOC_DIR = ./build/release/moc
-	RCC_DIR = ./build/release/rcc
-	UI_DIR = ./build/release/ui
+    DESTDIR = ./build/release
+    OBJECTS_DIR = ./build/release/obj
+    MOC_DIR = ./build/release/moc
+    RCC_DIR = ./build/release/rcc
+    UI_DIR = ./build/release/ui
 }
 
 CONFIG(debug, debug|release) {
-	DESTDIR = ./build/debug
-	OBJECTS_DIR = ./build/debug/obj
-	MOC_DIR = ./build/debug/moc
-	RCC_DIR = ./build/debug/rcc
-	UI_DIR = ./build/debug/ui
+    DESTDIR = ./build/debug
+    OBJECTS_DIR = ./build/debug/obj
+    MOC_DIR = ./build/debug/moc
+    RCC_DIR = ./build/debug/rcc
+    UI_DIR = ./build/debug/ui
 }
