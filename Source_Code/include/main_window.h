@@ -13,6 +13,9 @@
 #define CNN_PSO_PROJECT_MAIN_WINDOW_H_
 
 #include <QMainWindow>
+#include "include/pso_algorithm.h"
+#include "include/utils.h"
+
 
 #ifdef _DEBUG
     #include "../build/debug/ui/ui_MainWindow.h"
@@ -57,6 +60,12 @@ private slots:
 
 private:
     /**
+     * @brief Initilaization of the class fields with default values.
+     */
+    void
+    initializeClassFields();
+    
+    /**
      * @brief Initialization of the main window graphical user interface.
      */
     void
@@ -68,8 +77,17 @@ private:
     void
     initializeSignalSlotConnections();
 
-    // Form of the main window.
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui;  /**< Form of the main window. */
+
+    bool isMNISTDataLoaded;  /**< Flag showing if MNIST data data loaded or not. */
+    bool isSearchRunning;  /**< Flag showing if search is running or not. */
+    f32 searchRunningTime;  /**< Search running time in seconds. */
+    bool isSaveErrorValues;  /**< Flag to save RMSE values into array. */
+    PSOAlgorithm *PSOAlg;  /**< Pointer to the PSO algorithm object. */
+    
+
+
+
 };
 
 #endif  // CNN_PSO_PROJECT_MAIN_WINDOW_H_

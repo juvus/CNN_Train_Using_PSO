@@ -1,6 +1,7 @@
-<!DOCTYPE RCC>
-<RCC version="1.0">
-  <qresource prefix="/res">
-    <file>home.png</file>
-  </qresource>
+<RCC>
+    <qresource prefix="/res">
+        <file>home.png</file>
+        <file>arrow.png</file>
+        <file>icon.png</file>
+    </qresource>
 </RCC>

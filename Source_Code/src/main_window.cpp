@@ -20,10 +20,9 @@
 #include <QPainter>
 #include <QMessageBox>
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent), ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
-    ui->setupUi(this);
+    initializeClassFields();
     initializeUI();
     initializeSignalSlotConnections();
 }
@@ -34,25 +33,33 @@ MainWindow::~MainWindow()
 }
 
 void
+MainWindow::initializeClassFields()
+{
+    ui = nullptr;
+    isMNISTDataLoaded = false;
+    isSearchRunning = false;
+    searchRunningTime = 0.0f;
+    isSaveErrorValues = false;
+    PSOAlg = nullptr;
+}
+
+void
 MainWindow::initializeUI()
 {
-    // Make the size of the window fixed
-    int width = this->width();
-    int height = this->height();
-    setFixedSize(width, height);
+    ui = new (Ui::MainWindow);
+    ui->setupUi(this);
+    
+    // Put default values to the PSO algorithm settings.
+    
 
-    setWindowTitle("CNN Train Using PSO");
+
 }
 
 void
 MainWindow::initializeSignalSlotConnections()
 {
-    connect(ui->pushButton, &QPushButton::clicked,
-            this, &MainWindow::show_message);
-
-
-    //connect(ui->pushButton, SIGNAL(clicked(bool)),
-    //        this, SLOT(show_message()));
+    connect(ui->pushButton, SIGNAL(clicked(bool)),
+            this, SLOT(show_message()));     
 }
 
 void
