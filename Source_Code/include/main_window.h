@@ -21,6 +21,14 @@
 #endif
 
 /**
+ * @brief Namespace for the graphical user interface (GUI).
+ */
+namespace Ui
+{
+    class MainWindow;
+}
+
+/**
  * @brief Class for the main window of the application.
  */
 class MainWindow : public QMainWindow
@@ -28,7 +36,8 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow();
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
 
 protected:
     /**
@@ -37,16 +46,30 @@ protected:
      */
     void closeEvent(QCloseEvent *event) override;
 
+    void paintEvent(QPaintEvent *) override;
+
+
 private slots:
 
-private:
-    // Form of the main window.
-    Ui::MainWindow ui;
+    void show_message();
 
+
+
+private:
     /**
      * @brief Initialization of the main window graphical user interface.
      */
-    void initializeUI();
+    void
+    initializeUI();
+
+    /**
+     * @brief Initialization of the signal-slot connections.
+     */
+    void
+    initializeSignalSlotConnections();
+
+    // Form of the main window.
+    Ui::MainWindow *ui;
 };
 
 #endif  // CNN_PSO_PROJECT_MAIN_WINDOW_H_

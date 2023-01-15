@@ -15,16 +15,22 @@
 #include <QCloseEvent>
 #include "include/utils.h"
 
-MainWindow::MainWindow()
+// Testing with picture
+#include <QPicture>
+#include <QPainter>
+#include <QMessageBox>
+
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent), ui(new Ui::MainWindow)
 {
-    ui.setupUi(this);
+    ui->setupUi(this);
     initializeUI();
+    initializeSignalSlotConnections();
 }
 
-void 
-MainWindow::closeEvent(QCloseEvent *event)
+MainWindow::~MainWindow()
 {
-    QMainWindow::closeEvent(event);
+    delete ui;
 }
 
 void
@@ -36,5 +42,38 @@ MainWindow::initializeUI()
     setFixedSize(width, height);
 
     setWindowTitle("CNN Train Using PSO");
+}
+
+void
+MainWindow::initializeSignalSlotConnections()
+{
+    connect(ui->pushButton, &QPushButton::clicked,
+            this, &MainWindow::show_message);
+
+
+    //connect(ui->pushButton, SIGNAL(clicked(bool)),
+    //        this, SLOT(show_message()));
+}
+
+void
+MainWindow::closeEvent(QCloseEvent *event)
+{
+    QMainWindow::closeEvent(event);
+}
+
+void
+MainWindow::paintEvent(QPaintEvent *)
+{
+    QPainter painter(this);
+       painter.setPen(Qt::blue);
+       painter.setFont(QFont("Arial", 30));
+       painter.drawText(rect(), Qt::AlignCenter, "Qt");
+}
+
+
+
+void MainWindow::show_message()
+{
+    QMessageBox::information(this, "Some message", "Some message text");
 }
 

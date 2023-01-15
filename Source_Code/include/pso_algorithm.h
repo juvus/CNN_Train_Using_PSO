@@ -18,6 +18,10 @@
 class ConvNeuralNetwork;
 class MNISTData;
 
+/**
+ * @brief Structure for holding the PSO algorithm parameters (searching settings
+ * and values of algorithm hyperparameters).
+ */
 struct PSOInitParams
 {
     //Searching algorithm settings.
@@ -39,7 +43,11 @@ struct PSOInitParams
     u32 b;  /**< Additional randomization of all particles every b-th iteration. */
 };
 
-struct PSOInitCallbackFunctions
+/**
+ * @brief Structure for holding the pointers for the callback classes. Method of this
+ * classes are invoked during the work of the searching procedure.
+ */
+struct PSOInitCallbackClasses
 {
     ConvNeuralNetwork *conv_neural_network;
     MNISTData *mnist_data;
@@ -53,32 +61,40 @@ struct PSOSearchResult
 
 
 /**
- * @brief 
+ * @brief Class for implementation of the PSO algorithm.
  */
 class PSOAlgorithm
 {
 public:
     /**
-     * @brief Construct a new PSOAlgorithm object.
+     * @brief Object constructor.
      */
     PSOAlgorithm();
 
     /**
-     * @brief Destroy the PSOAlgorithm object
+     * @brief Object destructor.
      */
     ~PSOAlgorithm();
 
     /**
      * @brief Initialization of the PSO algorithm with set of search algorithm settings 
      * and hyperparameters.
-     * @param 
+     * @param params Reference to the structure with algorithm parameters.
      */
-
     void
-    initializePSOAlgorithm(PSOInitParams &params, PSOInitCallbackFunctions &clb_fcns);
+    initializePSOAlgorithm(PSOInitParams &params);
     
+    /**
+     * @brief Initialization of the callback classes.
+     * @param clb_classes Reference to the structure with callback classes.
+     */
     void
-    initializeCallbackClasses();
+    initializeCallbackClasses(PSOInitCallbackClasses &clb_classes);
+
+
+
+
+
 
 
     f32 
@@ -146,7 +162,8 @@ private:
 
 
     // Misc fields.
-    bool isInitialized;  /**< Flag showing the initialization of the algorithm. */
+    bool isParamsInitialized;  /**< Flag showing the initialization of the algorithm. */
+    bool isClbClassesInitialized;  /** Flag showing the initialization of callback classes. */
     
 
 };
