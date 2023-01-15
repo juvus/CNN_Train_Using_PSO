@@ -25,6 +25,9 @@ HEADERS += \
 FORMS = \
     ./ui/MainWindow.ui
 
+RESOURCES += \
+    ./resources/resources.qrc
+
 INCLUDEPATH += $$PWD/include
 
 CONFIG(release, debug|release) {
