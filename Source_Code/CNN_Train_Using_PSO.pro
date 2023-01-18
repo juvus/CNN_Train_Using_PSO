@@ -45,3 +45,5 @@ CONFIG(debug, debug|release) {
     RCC_DIR = ./build/debug/rcc
     UI_DIR = ./build/debug/ui
 }
+
+DISTFILES +=

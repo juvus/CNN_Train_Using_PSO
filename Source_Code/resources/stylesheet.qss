@@ -1,0 +1,19 @@
+QGroupBox
+{
+    border: 1px solid;
+    border-color: #c5c5c5;
+    margin-top: 20px;
+}
+
+QGroupBox::title
+{
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: -2px;
+    top: 2px;
+}
+
+QFrame #frm_trainDigitImage, #frm_testDigitImage
+{
+    border: 1px solid gray;
+}

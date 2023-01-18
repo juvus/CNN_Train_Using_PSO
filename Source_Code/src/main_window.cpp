@@ -16,6 +16,7 @@
 #include "include/utils.h"
 
 // Testing with picture
+#include <QFile>
 #include <QPicture>
 #include <QPainter>
 #include <QMessageBox>
@@ -49,6 +50,28 @@ MainWindow::initializeUI()
     ui = new (Ui::MainWindow);
     ui->setupUi(this);
     
+    // Set additional styles to the window
+    QFile styleSheetfile(":/res/stylesheet.qss");
+    if (styleSheetfile.open(QFile::ReadOnly | QFile::Text))
+    {
+        QString styleSheet = QLatin1String(styleSheetfile.readAll());
+        this->setStyleSheet(styleSheet);
+        styleSheetfile.close();
+    }
+
+
+
+
+
+
+
+    //ui->groupBox->setStyleSheet("QGroupBox {border: 1px solid gray; margin-top: 3ex;}"
+    //                            "QGroupBox::title {subcontrol-origin: margin; margin: 0px; subcontrol-position: top left; padding: 0 5px; background-color: transparent;}");
+
+
+    //this->setStyleSheet("QGroupBox {border: 1px solid gray}");
+    //this->setStyleSheet("QGroupBox {subcontrol-origin: margin; subcontrol-position: top center; padding: 0 3px; background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #FF0ECE, stop: 1 #FFFFFF);}");
+
     // Put default values to the PSO algorithm settings.
     
 

@@ -3,5 +3,6 @@
         <file>home.png</file>
         <file>arrow.png</file>
         <file>icon.png</file>
+        <file>stylesheet.qss</file>
     </qresource>
 </RCC>
