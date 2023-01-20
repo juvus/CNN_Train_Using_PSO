@@ -4,5 +4,7 @@
         <file>arrow.png</file>
         <file>icon.png</file>
         <file>stylesheet.qss</file>
+        <file>lamp_off.png</file>
+        <file>lamp_on.png</file>
     </qresource>
 </RCC>
