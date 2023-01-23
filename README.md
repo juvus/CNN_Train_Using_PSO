@@ -10,5 +10,25 @@ Learning algorithm: Particle Swarm Optimization (PSO);
 
 Technologies: C++, Qt (for GUI), QCustomPlot (for plotting);
 
+## Application GUI development
+
+<p align="center">
+<img src="/Images_for_GitHub/Application GUI. MNIST data loading.png" width=1075px>
+</p>
+
+**Fig.1.** Application GUI. MNIST data loading.
+
+<p align="center">
+<img src="/Images_for_GitHub/Application GUI. Settings.png" width=1075px>
+</p>
+
+**Fig.1.** Application GUI. Settings.
+
+<p align="center">
+<img src="/Images_for_GitHub/Application GUI. CNN Training.png" width=1075px>
+</p>
+
+**Fig.1.** Application GUI. CNN Training.
+
 ## Licence
 Code in this project is available under the `GPLv3` license. You can find the license file here: [LICENSE](/LICENSE).
